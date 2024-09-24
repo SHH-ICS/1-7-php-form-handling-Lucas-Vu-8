@@ -8,15 +8,12 @@
   </head>
 
   <body>
-    
     <?php
     $userName = "";
-    if ( isset( $_POST['userName'] ) ){
-      $userName = $_POST['userName'];
+    if (isset($_POST['name'])) { // Adjusted to match the form input name
+      $userName = $_POST['name'];
     }
-    echo "<h1>Welcome ".$userName."!</h1>\n";
+    echo "<h1>Welcome " . htmlspecialchars($userName) . "!</h1>\n"; // Added htmlspecialchars for security
     ?>
-    
   </body>
-  
 </html>
